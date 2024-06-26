@@ -34,10 +34,11 @@ app.get('/', function (req, res) {
 app.get('/film', (req, res) => {
     const title = req.query.title;
     console.log(title)
+    console.log(apiKey)
     if (!title) {
         return res.redirect('/');
     }
-    const url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
+    const url = `https://www.omdbapi.com/?t=${title}&apikey=${apiKey}`;
     request(url, (error, response, body) => {
         if (error) {
             console.error(error);
