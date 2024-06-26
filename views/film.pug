@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="style.css")
+        title Document
+
+    body
+        include ./header.pug
+
+        main
+            h1 Tu película #{msj}
+            
+            section
+                article
+                    h1 Resultados de búsqueda
+                    if film
+                        p Título: #{film.Title}
+                        p Año: #{film.Year}
+                        p Tipo: #{film.Type}
+                        img(src=film.Poster, alt=film.Title width="300")
+                    else
+                        p No se encontró la película.
+
+                a(href="/") Realizar una nueva búsqueda
+
+        include ./footer.pug

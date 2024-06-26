@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="style.css")
+        title Document
+        
+    body
+        include ./header.pug
+
+        main
+            h1 Buscador de Películas
+            section
+                h3 Introduce el titulo de la película
+                form#form_pelicula(action='/film' method='get')
+                    input#title(type='text' name='title' placeholder='título')
+                    input(type='submit' value='BUSCAR')
+                p#message
+           
+        include ./footer.pug
