@@ -3,6 +3,10 @@ const request = require("request");  // Añade esta línea
 const app = express(); //inicializar el servidor
 const port = 3000;
 
+// Importar archivo .env
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
+
 // Importar Middlewares
 const error404 = require("./middlewares/error404");
 const morgan = require("./middlewares/morgan");
@@ -20,8 +24,6 @@ app.use(express.static('public')) // Habilito carpeta public
 // Configuración de vistas PUG - Motor de plantillas
 app.set('view engine', 'pug');
 app.set('views','./views');
-
-const apiKey = '86650a87';
 
 // Rutas
 
